@@ -18,6 +18,12 @@ grade_map = {
     'F': 0.0
 }
 
+# Convert grades to numbers
+df['Yurselln_Grade_Numeric'] = df['Yurselln_Grade'].map(grade_map)
+
+# Calculate correlation with wins
+correlation = df['Yurselln_Grade_Numeric'].corr(df['Win'])
+
 # Get all your team's players
 team_players = ['tymelxss', 'AbuTalibaan', 'Glo4Prezz', 'Yurselln', 'MajinKemboi']
 
